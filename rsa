@@ -46,7 +46,7 @@ def func():
                     print("{}={}*{}".format(factorial, factorial // i, i))
                     break
             i = i + 2
-            if i = (factorial // 2) + 1:
+            if i == (factorial // 2) + 1:
                 print("{}={}*{}".format(factorial, factorial, i))
     except IndexError:
         pass
