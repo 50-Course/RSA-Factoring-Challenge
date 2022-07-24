@@ -30,4 +30,13 @@ def factorize(value: int):
     Returns:
         ```n = p*q``` n : (int)
     """
-    pass
+    try:
+        with open(sys.argv[1]) as file:
+            line = file.readline()
+
+            while line != "":
+                value = int(line.split("\n")[0])
+                factorize(value)
+    except Exception:
+        pass
+
