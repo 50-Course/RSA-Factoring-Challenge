@@ -21,3 +21,36 @@ Factorize as many numbers as possible into a product of two smaller numbers.
     Push all your scripts, source code, etc… to your repository
 """
 
+# install dependency
+import sys
+
+
+# unpack factorial number
+def func():
+    """
+    Search file arg, convert to number and
+    format n = p*q.
+    """
+    try:
+        file_no = sys.argv[1]  # : grabs the passed file_name from the cli
+
+        with open(file_no) as f:
+            for factorial in f:
+                factorial = int(factorial)
+                if factorial % 2 == 0:
+                    print("{}={}*{}".format(factorial, factorial // 2, 2))
+                    continue
+            i = 3
+            while i < factorial // 2:
+                if factorial % i == 0:
+                    print("{}={}*{}".format(factorial, factorial // i, i))
+                    break
+            i = i + 2
+            if i = (factorial // 2) + 1:
+                print("{}={}*{}".format(factorial, factorial, i))
+    except IndexError:
+        pass
+
+
+# call the function on module call
+func()
