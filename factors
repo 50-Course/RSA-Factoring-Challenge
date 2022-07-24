@@ -22,7 +22,7 @@ Factorize as many numbers as possible into a product of two smaller numbers.
 """
 
 
-def factorize(value: int):
+def factorize(value):
     """
     Outputs the factorial decomposition of an integer
     greater than 1.
@@ -30,6 +30,23 @@ def factorize(value: int):
     Returns:
         ```n = p*q``` n : (int)
     """
+    i = 2
+
+    if value < i:
+        return None
+    print()
+
+    print(value, "**** : value before decomposition.")
+    while value % i:
+        i += 1
+    print("{:.0f}={:.0f}*{:.0f}".format(value, value / i, i))
+
+    print(value, "**** : value after decomposition.")
+
+    print()
+
+    if len(sys.argv) != 2:
+        exit()
     try:
         with open(sys.argv[1]) as file:
             line = file.readline()
@@ -39,4 +56,3 @@ def factorize(value: int):
                 factorize(value)
     except Exception:
         pass
-
