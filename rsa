@@ -48,9 +48,8 @@ def func():
             i = i + 2
             if i == (factorial // 2) + 1:
                 print("{}={}*{}".format(factorial, factorial, i))
-    except IndexError:
+    except (IndexError):
         pass
-
 
 # call the function on module call
 func()
